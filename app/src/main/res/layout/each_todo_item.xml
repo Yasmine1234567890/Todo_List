@@ -12,18 +12,32 @@
         android:layout_height="wrap_content"
         android:paddingVertical="20dp">
 
-        <TextView
-            android:id="@+id/todoTask"
+        <!-- CheckBox for marking the task as done -->
+        <CheckBox
+            android:id="@+id/taskCheckBox"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="16dp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:buttonTint="@color/text_color"/>
+
+        <!-- TextView for task title -->
+        <TextView
+            android:id="@+id/todoTask"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
             android:text="Item 1"
             android:textColor="@color/text_color"
             android:textSize="17sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/taskCheckBox"
+            app:layout_constraintEnd_toStartOf="@id/editTask"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!-- Edit and Delete buttons -->
         <ImageView
             android:id="@+id/editTask"
             android:layout_width="wrap_content"
